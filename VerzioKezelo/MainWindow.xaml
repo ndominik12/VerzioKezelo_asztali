@@ -6,7 +6,33 @@
         xmlns:local="clr-namespace:VerzioKezelo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
+                <Button x:Name="BtnSelectFolder" Width="150" Click="BtnSelectFolder_Click">Mappa kiválasztása</Button>
+                <TextBlock x:Name="TxtFolder" Margin="8,4,0,0" VerticalAlignment="Center">(nincs mappa kiválasztva)</TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,8">
+                <TextBlock VerticalAlignment="Center">Commit neve:</TextBlock>
+                <TextBox x:Name="TxtCommitName" Width="300" Margin="8,0,0,0" />
+                <Button x:Name="BtnCommit" Width="100" Margin="8,0,0,0" Click="BtnCommit_Click">Commit</Button>
+                <Button x:Name="BtnNeedCommit" Width="130" Margin="8,0,0,0" Click="BtnNeedCommit_Click">Commit szükséges?</Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,8">
+                <TextBlock VerticalAlignment="Center">Mentések:</TextBlock>
+                <ComboBox x:Name="ComboCommits" Width="400" Margin="8,0,0,0" />
+                <Button x:Name="BtnRestore" Width="100" Margin="8,0,0,0" Click="BtnRestore_Click">Visszaállít</Button>
+                <Button x:Name="BtnDelete" Width="100" Margin="8,0,0,0" Click="BtnDelete_Click">Törlés</Button>
+            </StackPanel>
+
+            <TextBox x:Name="TxtLog" Grid.Row="3" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
     </Grid>
 </Window>
